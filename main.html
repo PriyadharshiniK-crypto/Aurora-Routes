@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurora Routes</title>
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Lato&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+   <style>
         body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:'cinzel', sans-serif;
 background:#f5f5f5;
 }
 nav{
-background:#1e3d59;
+background:#56c9e6;
 color:white;
 display:flex;
 justify-content:space-between;
@@ -29,6 +31,7 @@ nav a{
 text-decoration:none;
 color:white;
 font-weight:bold;
+font-family: 'cinzel', serif;
 }
 .head{
 background:url("mainimg.jpg");
@@ -52,16 +55,32 @@ font-size:18px;
 padding:40px;
 text-align:center;
 background:white;
+font-family: 'cinzel', serif;
 }
 .about p{
 max-width:700px;
 margin:auto;
 line-height:1.6;
+font-family: 'quicksand', sans-serif;
 }
 #places{
-padding:40px;
-text-align:center;
+max-width:1100px;
+margin:40px auto;
+padding:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
 }
+
+#places{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+text-align: center;
+}
+
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -92,19 +111,42 @@ margin:15px 0;
 display:inline-block;
 margin-bottom:15px;
 padding:8px 15px;
-background:#ff7b00;
+background:#56c9e6;
 color:white;
 text-decoration:none;
 border-radius:5px;
 }
+.mystery{
+text-align:center;
+padding:60px 20px;
+background:#111;
+color:white;
+}
+
+.mystery-box{
+width:250px;
+height:150px;
+margin:auto;
+background:#56c9e6;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+font-size:18px;
+}
 footer{
-background:#1e3d59;
+background:#56c9e6;
 color:white;
 text-align:center;
 padding:15px;
-margin-top:40px;
+margin: top 400px;
+width: 100px;
 }
-
+#discount, footer {
+    width: 100%;
+    display: block;
+}
     </style>
 </head>
 <body>
@@ -151,7 +193,7 @@ experiences. Choose your favorite destination and start planning your dream vaca
 <a href="Maldives.html">View Details</a>
 </div>
 <div class="card">
-<img src="japanmain.jpg">
+<img src="japmain.jpg">
 <h3>Japan</h3>
 <a href="Japan.html">View Details</a>
 </div>
@@ -167,7 +209,32 @@ experiences. Choose your favorite destination and start planning your dream vaca
 </div>
 </div>
 
-</section>
+<section id="discount">
+    <div class="discount-container">
+        <h2> Grab Your Surprise Discount</h2>
+
+        <div class="mystery-box" onclick="showDiscount()">
+            <span id="text">Click to Reveal</span>
+        </div>
+    </div>
+</section><br>
+
+
+
+<script>
+function showDiscount(){
+let offers = [
+"~ 20% OFF",
+"~ ₹5000 OFF",
+"~ Free Hotel Upgrade",
+"~ Buy 1 Get 1 Tour",
+"~ Free Breakfast"
+];
+
+let random = Math.floor(Math.random() * offers.length);
+document.getElementById("text").innerHTML = offers[random];
+}
+</script>
 <footer>
 <p>© 2026 Aurora Routes | Explore the world with us</p>
 </footer>
